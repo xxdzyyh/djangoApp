@@ -1,0 +1,20 @@
+<! -- 定义表单，以及上传请求url，上传方式，类型-->
+<form action="/FileUpload/" method="post" enctype="multipart/form-data">
+<!-- 选择文件 -->
+            <input type="file" name="file">
+            </br>
+<!-- 输入描述 -->
+            备注：<input type="text" name="content">
+            <br>
+            </br>
+<!-- 项目选择框 -->
+            <select class="form-control select1" name="proname" style="width: 40%">
+                {% for m in prolist %}
+                    <option class="project-name" value="{{ m.Name }}" name="name">{{ m.Name }}</option>
+                {% endfor %}
+            </select>
+            </br>
+
+<!-- 上传按钮 -->
+            <input type="submit" value="上传">
+        </form>
